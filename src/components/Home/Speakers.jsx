@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import lax from "lax.js";
 import { Link } from "react-router-dom";
 import LaxDiv from "../Shared/LaxDiv";
 
 function Speakers() {
-  useEffect(() => {
+  useState(() => {
     lax.setup();
 
     document.addEventListener(
@@ -16,7 +16,7 @@ function Speakers() {
     );
 
     lax.update(window.scrollY);
-  }, []);
+  });
 
   return (
     <section className="speakers-area ptb-120 pb-0">
@@ -26,7 +26,7 @@ function Speakers() {
           <h2>Who's Speaking</h2>
           <div className="bar"></div>
           <LaxDiv text="Speakers" dataPreset="driftRight" />
-          <Link to="/speakers-1" className="btn btn-primary">
+          <Link to="#" className="btn btn-primary">
             View More Speakers
           </Link>
         </div>
@@ -48,38 +48,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -102,38 +86,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -156,38 +124,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -210,38 +162,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -264,38 +200,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -318,38 +238,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -372,38 +276,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>
@@ -426,38 +314,22 @@ function Speakers() {
             </div>
             <ul>
               <li>
-                <Link
-                  to="https://www.facebook.com/"
-                  target="_blank"
-                  className="facebook"
-                >
+                <Link to="#" target="_blank" className="facebook">
                   <i className="icofont-facebook"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://twitter.com/"
-                  target="_blank"
-                  className="twitter"
-                >
+                <Link to="#" target="_blank" className="twitter">
                   <i className="icofont-twitter"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.instagram.com/"
-                  target="_blank"
-                  className="instagram"
-                >
+                <Link to="#" target="_blank" className="instagram">
                   <i className="icofont-instagram"></i>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="https://www.linkedin.com/"
-                  target="_blank"
-                  className="linkedin"
-                >
+                <Link to="#" target="_blank" className="linkedin">
                   <i className="icofont-linkedin"></i>
                 </Link>
               </li>

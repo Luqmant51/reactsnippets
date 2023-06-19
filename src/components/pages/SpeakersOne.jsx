@@ -1,18 +1,16 @@
-import React from 'react'
-import MainBanner from '../Speakers/MainBanner';
-import Speakers from '../Speakers/SpeakersOne';
-import Footer from '../Common/Footer';
- 
-class SpeakersOne extends React.Component {
-    render(){
-        return (
-            <React.Fragment>
-                <MainBanner />
-                <Speakers />
-                <Footer />
-            </React.Fragment>
-        );
-    }
+import React from "react";
+import MainBanner from "../Speakers/MainBanner";
+import Speakers from "../Speakers/SpeakersOne";
+import Footer from "../Common/Footer";
+
+function SpeakersOne() {
+  return (
+    <>
+      <MainBanner />
+      <Speakers />
+      <Footer />
+    </>
+  );
 }
- 
+
 export default SpeakersOne;

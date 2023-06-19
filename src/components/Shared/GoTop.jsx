@@ -1,55 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
-class GoTop extends React.Component {
+function GoTop() {
+  const [isVisible, setIsVisible] = useState(false);
 
-    state = {
-        intervalId: 0,
-        thePosition: false
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     };
 
-    componentDidMount() {
-        this._isMounted = true;
-        document.addEventListener("scroll", () => {
-            if (window.scrollY > 170) {
-                this.setState({ thePosition: true })
-            } else {
-                this.setState({ thePosition: false })
-            }
-        });
-        window.scrollTo(0, 0);
-    }
+    window.addEventListener("scroll", toggleVisibility);
 
-    componentWillUnmount() {
-        this._isMounted = false;
-    }
-    
-    onScrollStep = () => {
-        if (window.pageYOffset === 0){
-            clearInterval(this.state.intervalId);
-        }
-        window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
-    }
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
 
-    scrollToTop = () => {
-        let intervalId = setInterval(this.onScrollStep, this.props.delayInMs);
-        this.setState({ intervalId: intervalId });
-    }
+  const renderGoTopIcon = () => {
+    return (
+      <div className="back-to-top" onClick={scrollToTop}>
+        Top
+      </div>
+    );
+  };
 
-    renderGoTopIcon = () => {
-        if (this.state.thePosition){
-            return (
-                <div className="back-to-top" onClick={this.scrollToTop}>Top</div>
-            )
-        }
-    }
-
-    render(){
-        return (
-            <React.Fragment>
-                {this.renderGoTopIcon()}
-            </React.Fragment>
-        )
-    }
+  return <>{isVisible && renderGoTopIcon()}</>;
 }
 
 export default GoTop;
