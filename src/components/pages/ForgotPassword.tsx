@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
   };
 
@@ -13,7 +13,7 @@ function Login() {
       <div className="d-table">
         <div className="d-table-cell">
           <div className="login-form">
-            <h3>Welcome Back!</h3>
+            <h3>Forgot Password</h3>
 
             <form onSubmit={onSubmit}>
               <div className="form-group">

@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
 const ComingSoon = () => {
-  const [days, setDays] = useState('');
-  const [hours, setHours] = useState('');
-  const [minutes, setMinutes] = useState('');
-  const [seconds, setSeconds] = useState('');
+  const [days, setDays] = useState<number>();
+  const [hours, setHours] = useState<number>();
+  const [minutes, setMinutes] = useState<number>();
+  const [seconds, setSeconds] = useState<number>();
 
   const makeTimer = () => {
-    let endTime = new Date("August 23, 2022 17:00:00 PDT");
-    let endTimeParse = Date.parse(endTime) / 1000;
+    let endTime: Date = new Date("August 23, 2022 17:00:00 PDT");
+    let endTimeParse = endTime.getTime() / 1000;
     let now = new Date();
-    let nowParse = Date.parse(now) / 1000;
+    let nowParse = now.getTime() / 1000;
     let timeLeft = endTimeParse - nowParse;
     let days = Math.floor(timeLeft / 86400);
     let hours = Math.floor((timeLeft - days * 86400) / 3600);
     let minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
     let seconds = Math.floor(timeLeft - days * 86400 - hours * 3600 - minutes * 60);
-    if (hours < "10") { hours = "0" + hours; }
-    if (minutes < "10") { minutes = "0" + minutes; }
-    if (seconds < "10") { seconds = "0" + seconds; }
+    if (hours < 10) { hours = 0 + hours; }
+    if (minutes < 10) { minutes = 0 + minutes; }
+    if (seconds < 10) { seconds = 0 + seconds; }
     setDays(days);
     setHours(hours);
     setMinutes(minutes);
@@ -35,9 +35,10 @@ const ComingSoon = () => {
     };
   }, []);
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
 
   return (
     <section className="coming-soon">

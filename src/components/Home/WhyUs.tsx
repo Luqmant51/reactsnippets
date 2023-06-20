@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Cta from "../Common/Cta";
 
+import choose1 from "../../assets/images/why-choose-img1.jpg";
+import choose2 from "../../assets/images/why-choose-img2.jpg";
+import choose3 from "../../assets/images/why-choose-img3.jpg";
+
 function WhyUs() {
   return (
     <>
@@ -10,7 +14,7 @@ function WhyUs() {
           <div className="col-lg-4 col-md-6 p-0">
             <div className="why-choose-img">
               <img
-                src={require("../../assets/images/why-choose-img1.jpg")}
+                src={choose1}
                 alt="Why Us"
               />
             </div>
@@ -35,7 +39,7 @@ function WhyUs() {
           <div className="col-lg-4 col-md-6 p-0">
             <div className="why-choose-img">
               <img
-                src={require("../../assets/images/why-choose-img2.jpg")}
+                src={choose2}
                 alt="Why Us"
               />
             </div>
@@ -60,7 +64,7 @@ function WhyUs() {
           <div className="col-lg-4 col-md-6 p-0">
             <div className="why-choose-img">
               <img
-                src={require("../../assets/images/why-choose-img3.jpg")}
+                src={choose3}
                 alt="Why Us"
               />
             </div>

@@ -1281,7 +1281,7 @@ About CSS
 .about-image .btn {
   position: absolute;
   bottom: -20px;
-  right: 0;
+  right: 300px;
 }
 
 /*about-style-two*/

@@ -2,20 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function EventSchedulesOne() {
-  const openTabSection = (evt, tabNmae) => {
-    let i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabs_item");
+  const openTabSection = (evt: React.MouseEvent<HTMLLIElement, MouseEvent>, tabName: string) => {
+    let i: number;
+    let tabcontent: HTMLCollectionOf<Element>;
+    let tablinks: HTMLCollectionOf<HTMLLIElement>;
+
+    tabcontent = document.getElementsByClassName("tabs_item") as HTMLCollectionOf<Element>;
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+      (tabcontent[i] as HTMLElement).style.display = "none";
     }
 
-    tablinks = document.getElementsByTagName("li");
+    tablinks = document.getElementsByTagName("li") as HTMLCollectionOf<HTMLLIElement>;
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace("current", "");
     }
 
-    document.getElementById(tabNmae).style.display = "block";
-    evt.currentTarget.className += "current";
+    const selectedTab = document.getElementById(tabName);
+    if (selectedTab) {
+      selectedTab.style.display = "block";
+    }
+
+    evt.currentTarget.className += " current";
   };
 
   return (

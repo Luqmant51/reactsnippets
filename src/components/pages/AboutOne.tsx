@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainBanner from "../AboutOne/MainBanner";
 import About from "../AboutOne/About";
 import WhyUs from "../Common/WhyUs";
@@ -10,9 +10,24 @@ import Partner from "../Common/Partner";
 import BuyTicket from "../Common/BuyTicket";
 import Subscribe from "../Common/Subscribe";
 import Cta from "../Common/Cta";
+import lax from 'lax.js';
 
 function AboutOne() {
- 
+  useEffect(() => {
+    lax.setup();
+
+    const handleScroll = () => {
+      lax.update(window.scrollY);
+    };
+
+    document.addEventListener('scroll', handleScroll, false);
+    lax.update(window.scrollY);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Main Banner */}
@@ -37,7 +52,7 @@ function AboutOne() {
       <Footer />
 
       {/* Back Top top */}
-      <GoTop scrollStepInPx="50" delayInMs="16.66" />
+      <GoTop />
     </>
   );
 }

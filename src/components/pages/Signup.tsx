@@ -1,22 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Signup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
   };
 
   return (
-    <section className="login-area">
+    <section className="signup-area">
       <div className="d-table">
         <div className="d-table-cell">
-          <div className="login-form">
-            <h3>Welcome Back!</h3>
+          <div className="signup-form">
+            <h3>Create your Account</h3>
 
             <form onSubmit={onSubmit}>
+              <div className="form-group">
+                <label>Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+
               <div className="form-group">
                 <label>Email</label>
                 <input
@@ -40,17 +52,11 @@ function Login() {
               </div>
 
               <button type="submit" className="btn btn-primary">
-                Login
+                Signup
               </button>
 
               <p>
-                <Link to="/signup" className="pull-left">
-                  Create a new account
-                </Link>
-
-                <Link to="/ForgotPassword" className="pull-right">
-                  Forgot your password?
-                </Link>
+                Already a registered user? <Link to="/login">Login!</Link>
               </p>
             </form>
           </div>
@@ -60,4 +66,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
