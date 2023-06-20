@@ -1,19 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function PricingCardOne() {
+function Pricing() {
   return (
     <section className="pricing-area ptb-120 bg-image">
       <div className="container">
+        <div className="section-title">
+          <span>Pricing Plan</span>
+          <h2>
+            Get Your <b>Tickets</b>
+          </h2>
+
+          <div className="bg-title lax" data-lax-preset="driftLeft">
+            Pricing
+          </div>
+
+          <div className="bar"></div>
+        </div>
+
         <div className="row">
           <div className="col-lg-4 col-md-6">
-            <div className="pricing-table-box">
-              <div className="pricingTable-header">
-                <h3 className="title">BASIC PASS</h3>
-                <div className="price-value">
+            <div className="pricing-plan">
+              <h3>
+                BASIC PASS{" "}
+                <span>
                   <sup>$</sup>59
-                </div>
-              </div>
+                </span>
+              </h3>
 
               <ul className="pricing-content">
                 <li>Regular Seating</li>
@@ -32,13 +45,13 @@ function PricingCardOne() {
           </div>
 
           <div className="col-lg-4 col-md-6">
-            <div className="pricing-table-box">
-              <div className="pricingTable-header">
-                <h3 className="title">STANDARD PASS</h3>
-                <div className="price-value">
+            <div className="pricing-plan">
+              <h3>
+                STANDARD PASS{" "}
+                <span>
                   <sup>$</sup>89
-                </div>
-              </div>
+                </span>
+              </h3>
 
               <ul className="pricing-content">
                 <li>Regular Seating</li>
@@ -57,13 +70,13 @@ function PricingCardOne() {
           </div>
 
           <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-            <div className="pricing-table-box">
-              <div className="pricingTable-header">
-                <h3 className="title">SILVER PASS</h3>
-                <div className="price-value">
+            <div className="pricing-plan">
+              <h3>
+                SILVER PASS{" "}
+                <span>
                   <sup>$</sup>99
-                </div>
-              </div>
+                </span>
+              </h3>
 
               <ul className="pricing-content">
                 <li>Regular Seating</li>
@@ -86,4 +99,4 @@ function PricingCardOne() {
   );
 }
 
-export default PricingCardOne;
+export default Pricing;

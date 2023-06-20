@@ -1,30 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import lax from 'lax.js';
- 
-class LaxDiv extends React.Component {
 
-    componentDidMount() {
-        this.el = ReactDOM.findDOMNode(this)
-        lax.addElement(this.el)
-    }
-    
-    componentWillUnmount() {
-        lax.removeElement(this.el)
-    }
+const LaxDiv = ({ text = 'Speakers', dataPreset = 'driftRight' }) => {
+  const elRef = useRef(null);
 
-    render(){
-        return (
-            <div className="bg-title lax" data-lax-preset={this.props.dataPreset} >
-                {this.props.text}
-            </div>
-        );
-    }
-}
+  useEffect(() => {
+    const el = ReactDOM.findDOMNode(elRef.current);
+    lax.addElement(el);
 
-LaxDiv.defaultProps = {
-    text: 'Speakers',
-    dataPreset: 'driftRight'
+    return () => {
+      lax.removeElement(el);
+    };
+  }, []);
+
+  return (
+    <div className="bg-title lax" data-lax-preset={dataPreset} ref={elRef}>
+      {text}
+    </div>
+  );
 };
- 
+
 export default LaxDiv;

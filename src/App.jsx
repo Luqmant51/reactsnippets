@@ -1,35 +1,32 @@
-import './assets/css/bootstrap.min.css';
-import './assets/css/icofont.min.css';
-import './assets/css/animate.min.css';
-import '../node_modules/react-modal-video/css/modal-video.min.css'
-import './assets/css/style.css';
-import './assets/css/responsive.css';
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/icofont.min.css";
+import "./assets/css/animate.min.css";
+import "../node_modules/react-modal-video/css/modal-video.min.css";
+import "./assets/css/style.css";
+import "./assets/css/responsive.css";
 
-import React from 'react';
-import AppRouter from './Routes';
-import Preloader from './components/Shared/Preloader';
+import React, { useState, useEffect } from "react";
+import AppRouter from "./Routes";
+import Preloader from "./components/Shared/Preloader";
 
-class App extends React.Component {
-    state = {
-        loading: true
-    };
+function App() {
+  const [loading, setLoading] = useState(true);
+  const demoAsyncCall = () => {
+    return new Promise((resolve) => setTimeout(() => resolve(), 2000));
+  };
 
-    componentDidMount(){
-        this.demoAsyncCall().then(() => this.setState({ loading: false }));
-    }
+  useEffect(() => {
+    demoAsyncCall().then(() => {
+      setLoading(false);
+    });
+  }, []);
 
-    demoAsyncCall = () => {
-        return new Promise((resolve) => setTimeout(() => resolve(), 2000));
-    }
-
-    render(){
-        return (
-            <React.Fragment>
-                {this.state.loading ? <Preloader /> : ''}
-                <AppRouter />
-            </React.Fragment>
-        );
-    }
+  return (
+    <>
+      {loading ? <Preloader /> : ""}
+      <AppRouter />
+    </>
+  );
 }
 
 export default App;

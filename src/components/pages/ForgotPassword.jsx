@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -28,17 +27,6 @@ function Login() {
                 />
               </div>
 
-              <div className="form-group">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
@@ -48,7 +36,7 @@ function Login() {
                   Create a new account
                 </Link>
 
-                <Link to="/ForgotPassword" className="pull-right">
+                <Link to="#" className="pull-right">
                   Forgot your password?
                 </Link>
               </p>

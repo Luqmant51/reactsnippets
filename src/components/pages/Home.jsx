@@ -1,18 +1,19 @@
 import React from "react";
-import MainBanner from "../AboutOne/MainBanner";
-import About from "../AboutOne/About";
-import WhyUs from "../Common/WhyUs";
-import Speakers from "../AboutOne/Speakers";
-import GoTop from "../Shared/GoTop";
-import Footer from "../Common/Footer";
+import MainBanner from "../Home/MainBanner";
+import About from "../Home/About";
+import WhyUs from "../Home/WhyUs";
+import Speakers from "../Home/Speakers";
+import EventSchedules from "../Home/EventSchedules";
 import FunFact from "../Common/FunFact";
+import Pricing from "../Home/Pricing";
 import Partner from "../Common/Partner";
+import LatesNews from "../Home/LatestNews";
 import BuyTicket from "../Common/BuyTicket";
 import Subscribe from "../Common/Subscribe";
-import Cta from "../Common/Cta";
+import Footer from "../Common/Footer";
+import GoTop from "../Shared/GoTop";
 
-function AboutOne() {
- 
+function Home() {
   return (
     <>
       {/* Main Banner */}
@@ -23,23 +24,26 @@ function AboutOne() {
       <WhyUs />
       {/* Speakers Area */}
       <Speakers />
-      {/* CTA Are */}
-      <Cta />
+      {/* Schedule Area */}
+      <EventSchedules />
       {/* FunFacts Area */}
       <FunFact />
       {/* Pricing Area */}
+      <Pricing />
+      {/* Partner Area */}
       <Partner />
+      {/* Blog Area */}
+      <LatesNews />
       {/* Buy Tickets Area */}
       <BuyTicket />
       {/* Subscribe Area */}
       <Subscribe />
-
+      {/* Footer Area */}
       <Footer />
-
       {/* Back Top top */}
-      <GoTop scrollStepInPx="50" delayInMs="16.66" />
+      <GoTop />
     </>
   );
 }
 
-export default AboutOne;
+export default Home;

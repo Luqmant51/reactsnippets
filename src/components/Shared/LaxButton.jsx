@@ -1,30 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import lax from 'lax.js';
- 
-class LaxButton extends React.Component {
 
-    componentDidMount() {
-        this.el = ReactDOM.findDOMNode(this)
-        lax.addElement(this.el)
-    }
-    
-    componentWillUnmount() {
-        lax.removeElement(this.el)
-    }
+const LaxButton = ({ buttonText = 'Explore More About' }) => {
+  const buttonRef = useRef(null);
 
-    render(){
-        return (
-            <Link to="#" className="btn btn-primary lax" data-lax-preset="driftLeft">
-                {this.props.buttonText}
-            </Link>
-        );
-    }
-}
+  useEffect(() => {
+    const element = buttonRef.current;
+    lax.addElement(element);
 
-LaxButton.defaultProps = {
-    buttonText: 'Explore More About'
+    return () => {
+      lax.removeElement(element);
+    };
+  }, []);
+
+  return (
+    <Link to="#" ref={buttonRef} className="btn btn-primary lax" data-lax-preset="driftLeft">
+      {buttonText}
+    </Link>
+  );
 };
- 
+
 export default LaxButton;

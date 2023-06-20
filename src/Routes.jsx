@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
-import HomeFour from "./components/pages/HomeFour";
+import Home from "./components/pages/Home";
 import AboutOne from "./components/pages/AboutOne";
 import PricingOne from "./components/pages/PricingOne";
 import SpeakersOne from "./components/pages/SpeakersOne";
 import ScheduleOne from "./components/pages/ScheduleOne";
 import Login from "./components/pages/Login";
+import ForgotPassword from "./components/pages/ForgotPassword";
 import Signup from "./components/pages/Signup";
 import ComingSoon from "./components/pages/ComingSoon";
 import NotFound from "./components/pages/NotFound";
@@ -26,12 +27,13 @@ const AppRouter = () => {
         <Router>
             {renderNavigation()}
             <Switch>
-                <Route path="/" exact component={HomeFour} />
+                <Route path="/" exact component={Home} />
                 <Route path="/about" exact component={AboutOne} />
                 <Route path="/pricing" exact component={PricingOne} />
                 <Route path="/speakers" exact component={SpeakersOne} />
                 <Route path="/schedule" exact component={ScheduleOne} />
                 <Route path="/login" exact component={Login} />
+                <Route path="/forgot" exact component={ForgotPassword} />
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/coming-soon" exact component={ComingSoon} />
                 <Route path="/faq" exact component={Faq} />

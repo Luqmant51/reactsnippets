@@ -1,18 +1,16 @@
-import React from 'react'
-import MainBanner from '../schedule/MainBanner';
-import EventSchedulesOne from '../schedule/EventSchedulesOne';
-import Footer from '../Common/Footer';
- 
-class ScheduleOne extends React.Component {
-    render(){
-        return (
-            <React.Fragment>
-                <MainBanner />
-                <EventSchedulesOne />
-                <Footer />
-            </React.Fragment>
-        );
-    }
+import React from "react";
+import MainBanner from "../schedule/MainBanner";
+import EventSchedulesOne from "../schedule/EventSchedulesOne";
+import Footer from "../Common/Footer";
+
+function ScheduleOne() {
+  return (
+    <>
+      <MainBanner />
+      <EventSchedulesOne />
+      <Footer />
+    </>
+  );
 }
- 
+
 export default ScheduleOne;
