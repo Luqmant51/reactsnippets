@@ -12,13 +12,12 @@ function Navigation() {
 
   const handleScroll = () => {
     const elementId = document.getElementById("navbar") as HTMLElement;
-  if (window.scrollY > 170) {
-    elementId.classList.add("is-sticky");
-    window.history.pushState("", document.title, window.location.pathname);
-  } else {
-    elementId.classList.remove("is-sticky");
-  }
-};
+    if (window.scrollY > 170) {
+      elementId.classList.add("is-sticky");
+    } else {
+      elementId.classList.remove("is-sticky");
+    }
+  };
 
 
   useEffect(() => {

@@ -4,8 +4,8 @@ import Navigation from "./components/Navigation/Navigation";
 import Home from "./components/pages/Home";
 import AboutOne from "./components/pages/AboutOne";
 import PricingOne from "./components/pages/PricingOne";
-import SpeakersOne from "./components/pages/SpeakersOne";
-import ScheduleOne from "./components/pages/ScheduleOne";
+import Speakers from "./components/pages/Speakers";
+import Schedule from "./components/pages/Schedule";
 import Login from "./components/pages/Login";
 import ForgotPassword from "./components/pages/ForgotPassword";
 import Signup from "./components/pages/Signup";
@@ -30,8 +30,8 @@ const AppRouter = () => {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" exact component={AboutOne} />
                 <Route path="/pricing" exact component={PricingOne} />
-                <Route path="/speakers" exact component={SpeakersOne} />
-                <Route path="/schedule" exact component={ScheduleOne} />
+                <Route path="/speakers" exact component={Speakers} />
+                <Route path="/schedule" exact component={Schedule} />
                 <Route path="/login" exact component={Login} />
                 <Route path="/forgot" exact component={ForgotPassword} />
                 <Route path="/signup" exact component={Signup} />

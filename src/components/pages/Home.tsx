@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import lax from 'lax.js';
 import MainBanner from "../Home/MainBanner";
-import About from "../Home/About";
+import About from "../Common/Aboutus";
 import WhyUs from "../Home/WhyUs";
 import Speakers from "../Home/Speakers";
 import EventSchedules from "../Home/EventSchedules";
@@ -13,6 +13,11 @@ import BuyTicket from "../Common/BuyTicket";
 import Subscribe from "../Common/Subscribe";
 import Footer from "../Common/Footer";
 import GoTop from "../Shared/GoTop";
+
+import about1 from "../../assets/images/about1.jpg";
+import about2 from "../../assets/images/about2.jpg";
+import about3 from "../../assets/images/shapes/5.png";
+import signature from "../../assets/images/signature.png";
 
 function Home() {
   useEffect(() => {
@@ -30,12 +35,14 @@ function Home() {
       document.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+
   return (
     <>
       {/* Main Banner */}
       <MainBanner />
       {/* About Area */}
-      <About />
+      <About about1={about1} about2={about2} about3={about3} signature={signature} />
       {/* Why Choose Us Area */}
       <WhyUs />
       {/* Speakers Area */}
