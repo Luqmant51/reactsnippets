@@ -12,7 +12,7 @@ const Contact = () => {
     text: "",
   });
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     const data = formFields;
     fetch("/api/contact", {
@@ -35,19 +35,19 @@ const Contact = () => {
     });
   };
 
-  const nameChangeHandler = (e) => {
+  const nameChangeHandler = (e: { target: { value: any; }; }) => {
     setFormFields({ ...formFields, name: e.target.value });
   };
 
-  const emailChangeHandler = (e) => {
+  const emailChangeHandler = (e: { target: { value: any; }; }) => {
     setFormFields({ ...formFields, email: e.target.value });
   };
 
-  const phoneChangeHandler = (e) => {
+  const phoneChangeHandler = (e: { target: { value: any; }; }) => {
     setFormFields({ ...formFields, phone: e.target.value });
   };
 
-  const textChangeHandler = (e) => {
+  const textChangeHandler = (e: { target: { value: any; }; }) => {
     setFormFields({ ...formFields, text: e.target.value });
   };
 
@@ -238,8 +238,8 @@ const Contact = () => {
                         name="message"
                         className="form-control"
                         id="message"
-                        cols="30"
-                        rows="4"
+                        cols={30}
+                        rows={4}
                         required={true}
                         data-error="Write your message"
                         value={formFields.text}

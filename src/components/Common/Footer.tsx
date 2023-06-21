@@ -85,7 +85,7 @@ function Footer() {
               </div>
               <ul>
                 <li>
-                  <Link to="/blog-1">Blog</Link>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>
@@ -101,7 +101,7 @@ function Footer() {
                 </li>
               </ul>
               <p>
-                Copyright <i className="icofont-copyright"></i> 2022 Evnia. All
+                Copyright <i className="icofont-copyright"></i> 2022 Krazzy Adventure. All
                 rights reserved
               </p>
             </div>

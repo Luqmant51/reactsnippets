@@ -11,7 +11,7 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import Footer from "../Common/Footer";
 
 function Faq() {
-  const submitHandler = (e) => {
+  const submitHandler = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
   };
 
@@ -178,8 +178,8 @@ function Faq() {
                   <div className="form-group">
                     <textarea
                       name="message"
-                      cols="30"
-                      rows="6"
+                      cols={30}
+                      rows={6}
                       placeholder="Message"
                       className="form-control"
                     />

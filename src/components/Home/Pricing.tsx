@@ -22,7 +22,7 @@ function Pricing() {
           <div className="col-lg-4 col-md-6">
             <div className="pricing-plan">
               <h3>
-                BASIC PASS{" "}
+                BASIC PASS
                 <span>
                   <sup>$</sup>59
                 </span>
@@ -47,7 +47,7 @@ function Pricing() {
           <div className="col-lg-4 col-md-6">
             <div className="pricing-plan">
               <h3>
-                STANDARD PASS{" "}
+                STANDARD PASS
                 <span>
                   <sup>$</sup>89
                 </span>
@@ -72,7 +72,7 @@ function Pricing() {
           <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
             <div className="pricing-plan">
               <h3>
-                SILVER PASS{" "}
+                SILVER PASS
                 <span>
                   <sup>$</sup>99
                 </span>

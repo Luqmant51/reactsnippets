@@ -1,7 +1,12 @@
-import React, {useEffect} from 'react';
-import lax from 'lax.js';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LaxButton from '../Shared/LaxButton';
+import lax from 'lax.js';
+
+import signature from "../../assets/images/signature.png"
+import about1 from "../../assets/images/about1.jpg"
+import about2 from "../../assets/images/about2.jpg"
+import about3 from "../../assets/images/about3.jpg"
 
 const About = () => {
   useEffect(() => {
@@ -12,12 +17,13 @@ const About = () => {
     };
 
     document.addEventListener('scroll', handleScroll, false);
+    lax.update(window.scrollY);
 
     return () => {
-      document.removeEventListener('scroll', handleScroll, false);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  
   return (
     <section className="about-area ptb-120 bg-image">
       <div className="container">
@@ -32,10 +38,10 @@ const About = () => {
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
               <div className="signature">
-                <img src={require("../../assets/images/signature.png")} alt="signature" />
+                <img src={signature} alt="signature" />
               </div>
 
-              <Link to="/about-1" className="btn btn-primary">
+              <Link to="/about" className="btn btn-primary">
                 Read More
                 <i className="icofont-double-right"></i>
               </Link>
@@ -46,11 +52,11 @@ const About = () => {
 
           <div className="col-lg-6">
             <div className="about-image">
-              <img src={require("../../assets/images/about1.jpg")} className="about-img1" alt="about" />
+              <img src={about1} className="about-img1" alt="about" />
 
-              <img src={require("../../assets/images/about2.jpg")} className="about-img2" alt="about" />
+              <img src={about2} className="about-img2" alt="about" />
 
-              <img src={require("../../assets/images/shapes/5.png")} className="shape-img" alt="about" />
+              <img src={about3} className="shape-img" alt="about" />
 
               <LaxButton buttonText="Explore More About" />
             </div>
@@ -62,3 +68,4 @@ const About = () => {
 };
 
 export default About;
+

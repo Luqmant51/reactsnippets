@@ -25,6 +25,7 @@ function MainBanner() {
   };
   return (
     <>
+
       <ModalVideo
         channel="youtube"
         isOpen={isOpen}
@@ -38,7 +39,7 @@ function MainBanner() {
             <div className="d-table-cell">
               <div className="container">
                 <VisibilitySensor>
-                  {({ isVisible }) => (
+                  {({ isVisible }: { isVisible: boolean }) => (
                     <div className="main-banner-content">
                       <p className={isVisible ? "animated fadeInDown" : ""}>
                         Are you <span>ready</span> to attend?
@@ -62,9 +63,8 @@ function MainBanner() {
                       <div className="button-box">
                         <Link
                           to="#"
-                          className={`btn btn-primary ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`btn btn-primary ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           Buy Tickets Now!
                         </Link>
@@ -74,9 +74,8 @@ function MainBanner() {
                             openModal();
                           }}
                           to="#"
-                          className={`video-btn popup-youtube ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`video-btn popup-youtube ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           <i className="icofont-ui-play"></i> Watch Pormo Video
                         </Link>
@@ -94,7 +93,7 @@ function MainBanner() {
             <div className="d-table-cell">
               <div className="container">
                 <VisibilitySensor>
-                  {({ isVisible }) => (
+                  {({ isVisible }: { isVisible: boolean }) => (
                     <div className="main-banner-content banner-content-center">
                       <p className={isVisible ? "animated fadeInDown" : ""}>
                         Are you <span>ready</span> to attend?
@@ -118,9 +117,8 @@ function MainBanner() {
                       <div className="button-box">
                         <Link
                           to="#"
-                          className={`btn btn-primary ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`btn btn-primary ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           Buy Tickets Now!
                         </Link>
@@ -130,9 +128,8 @@ function MainBanner() {
                             openModal();
                           }}
                           to="#"
-                          className={`video-btn popup-youtube ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`video-btn popup-youtube ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           <i className="icofont-ui-play"></i> Watch Pormo Video
                         </Link>
@@ -150,7 +147,7 @@ function MainBanner() {
             <div className="d-table-cell">
               <div className="container">
                 <VisibilitySensor>
-                  {({ isVisible }) => (
+                  {({ isVisible }: { isVisible: boolean }) => (
                     <div className="main-banner-content">
                       <p className={isVisible ? "animated fadeInDown" : ""}>
                         Are you <span>ready</span> to attend?
@@ -174,9 +171,8 @@ function MainBanner() {
                       <div className="button-box">
                         <Link
                           to="#"
-                          className={`btn btn-primary ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`btn btn-primary ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           Buy Tickets Now!
                         </Link>
@@ -186,9 +182,8 @@ function MainBanner() {
                             openModal();
                           }}
                           to="#"
-                          className={`video-btn popup-youtube ${
-                            isVisible ? "animated fadeInDown" : ""
-                          }`}
+                          className={`video-btn popup-youtube ${isVisible ? "animated fadeInDown" : ""
+                            }`}
                         >
                           <i className="icofont-ui-play"></i> Watch Pormo Video
                         </Link>

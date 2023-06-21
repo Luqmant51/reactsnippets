@@ -11,14 +11,15 @@ function Navigation() {
   };
 
   const handleScroll = () => {
-    const elementId = document.getElementById("navbar");
-    if (window.scrollY > 170) {
-      elementId.classList.add("is-sticky");
-      window.history.pushState("", document.title, window.location.pathname);
-    } else {
-      elementId.classList.remove("is-sticky");
-    }
-  };
+    const elementId = document.getElementById("navbar") as HTMLElement;
+  if (window.scrollY > 170) {
+    elementId.classList.add("is-sticky");
+    window.history.pushState("", document.title, window.location.pathname);
+  } else {
+    elementId.classList.remove("is-sticky");
+  }
+};
+
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
@@ -69,7 +70,6 @@ function Navigation() {
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
                   <Link
-                    exact="true"
                     to="/"
                     onClick={toggleOpen}
                     className="nav-link"

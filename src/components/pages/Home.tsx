@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import lax from 'lax.js';
 import MainBanner from "../Home/MainBanner";
 import About from "../Home/About";
 import WhyUs from "../Home/WhyUs";
@@ -14,6 +15,21 @@ import Footer from "../Common/Footer";
 import GoTop from "../Shared/GoTop";
 
 function Home() {
+  useEffect(() => {
+    lax.setup();
+
+    const handleScroll = () => {
+      lax.update(window.scrollY);
+    };
+
+    document.addEventListener('scroll', handleScroll, true);
+
+    lax.update(window.scrollY);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       {/* Main Banner */}

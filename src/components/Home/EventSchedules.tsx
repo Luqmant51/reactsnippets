@@ -1,22 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import author1 from "../../assets/images/author1.jpg"
+import author2 from "../../assets/images/author2.jpg"
+import author3 from "../../assets/images/author3.jpg"
+import author4 from "../../assets/images/author4.jpg"
+import author5 from "../../assets/images/author5.jpg"
+import author6 from "../../assets/images/author6.jpg"
+import author7 from "../../assets/images/author7.jpg"
+import author8 from "../../assets/images/author8.jpg"
+import author9 from "../../assets/images/author9.jpg"
+import shapes1 from "../../assets/images/shapes/1.png"
+import shapes2 from "../../assets/images/shapes/2.png"
+import shapes3 from "../../assets/images/shapes/3.png"
+import shapes4 from "../../assets/images/shapes/4.png"
+
+
 function EventSchedules() {
-  const openTabSection = (evt, tabNmae) => {
-    let i, tabcontent, tablinks;
+  const openTabSection = (evt: React.MouseEvent<HTMLLIElement, MouseEvent>, tabName: string): void => {
+    let i: number;
+    let tabcontent: HTMLCollectionOf<Element>;
+    let tablinks: HTMLCollectionOf<Element>;
+    
     tabcontent = document.getElementsByClassName("tabs_item");
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+      (tabcontent[i] as HTMLElement).style.display = "none";
     }
-
+  
     tablinks = document.getElementsByTagName("li");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace("current", "");
+      (tablinks[i] as HTMLElement).className = (tablinks[i] as HTMLElement).className.replace("current", "");
     }
-
-    document.getElementById(tabNmae).style.display = "block";
-    evt.currentTarget.className += "current";
+  
+    const element = document.getElementById(tabName);
+    if (element !== null) {
+      element.style.display = "block";
+      (evt.currentTarget as HTMLElement).className += " current";
+    }
   };
+  
 
   return (
     <section className="schedule-area schedule-style-four bg-image ptb-120">
@@ -50,7 +72,7 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author">
                               <img
-                                src={require("../../assets/images/author1.jpg")}
+                                src={author1}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Smith"
@@ -105,28 +127,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author5.jpg")}
+                                src={author5}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author2.jpg")}
+                                src={author2}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -186,14 +208,14 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author6.jpg")}
+                                src={author6}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author7.jpg")}
+                                src={author7}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
@@ -253,28 +275,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author8.jpg")}
+                                src={author8}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author9.jpg")}
+                                src={author9}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -338,7 +360,7 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author">
                               <img
-                                src={require("../../assets/images/author1.jpg")}
+                                src={author1}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Smith"
@@ -393,28 +415,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author5.jpg")}
+                                src={author5}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author2.jpg")}
+                                src={author2}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -474,14 +496,14 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author6.jpg")}
+                                src={author6}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author7.jpg")}
+                                src={author7}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
@@ -545,7 +567,7 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author">
                               <img
-                                src={require("../../assets/images/author1.jpg")}
+                                src={author1}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Smith"
@@ -600,28 +622,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author5.jpg")}
+                                src={author5}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author2.jpg")}
+                                src={author2}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -681,14 +703,14 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author6.jpg")}
+                                src={author6}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author7.jpg")}
+                                src={author7}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
@@ -748,28 +770,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author8.jpg")}
+                                src={author8}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author9.jpg")}
+                                src={author9}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -833,7 +855,7 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author">
                               <img
-                                src={require("../../assets/images/author1.jpg")}
+                                src={author1}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Smith"
@@ -888,28 +910,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author5.jpg")}
+                                src={author5}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author2.jpg")}
+                                src={author2}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -969,14 +991,14 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author6.jpg")}
+                                src={author6}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author7.jpg")}
+                                src={author7}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
@@ -1036,28 +1058,28 @@ function EventSchedules() {
                           <Link className="accordion-title" to="#">
                             <div className="author author-multi">
                               <img
-                                src={require("../../assets/images/author8.jpg")}
+                                src={author8}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Steven Lucy"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author9.jpg")}
+                                src={author9}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Jonaton Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author3.jpg")}
+                                src={author3}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Smith"
                                 alt="Schedule"
                               />
                               <img
-                                src={require("../../assets/images/author4.jpg")}
+                                src={author4}
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="John Doe"
@@ -1158,16 +1180,16 @@ function EventSchedules() {
       </div>
 
       <div className="shape1">
-        <img src={require("../../assets/images/shapes/1.png")} alt="shape1" />
+        <img src={shapes1} alt="shape1" />
       </div>
       <div className="shape2 rotateme">
-        <img src={require("../../assets/images/shapes/2.png")} alt="shape2" />
+        <img src={shapes2} alt="shape2" />
       </div>
       <div className="shape3 rotateme">
-        <img src={require("../../assets/images/shapes/3.png")} alt="shape3" />
+        <img src={shapes3} alt="shape3" />
       </div>
       <div className="shape4">
-        <img src={require("../../assets/images/shapes/4.png")} alt="shape4" />
+        <img src={shapes4} alt="shape4" />
       </div>
     </section>
   );

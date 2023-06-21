@@ -12,7 +12,7 @@ import Preloader from "./components/Shared/Preloader";
 function App() {
   const [loading, setLoading] = useState(true);
   const demoAsyncCall = () => {
-    return new Promise((resolve) => setTimeout(() => resolve(), 2000));
+    return new Promise<void>((resolve) => setTimeout(() => resolve(), 2000));
   };
 
   useEffect(() => {

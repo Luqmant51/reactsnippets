@@ -1,22 +1,31 @@
-import React, { useState } from "react";
-import lax from "lax.js";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import LaxDiv from "../Shared/LaxDiv";
+import lax from 'lax.js';
+
+import speakers1 from "../../assets/images/speakers1.jpg";
+import speakers2 from "../../assets/images/speakers2.jpg";
+import speakers3 from "../../assets/images/speakers3.jpg";
+import speakers4 from "../../assets/images/speakers4.jpg";
+import speakers5 from "../../assets/images/speakers5.jpg";
+import speakers6 from "../../assets/images/speakers6.jpg";
+import speakers7 from "../../assets/images/speakers7.jpg";
+import speakers8 from "../../assets/images/speakers8.jpg";
 
 function Speakers() {
-  useState(() => {
+  useEffect(() => {
     lax.setup();
 
-    document.addEventListener(
-      "scroll",
-      function (x) {
-        lax.update(window.scrollY);
-      },
-      false
-    );
+    const handleScroll = () => {
+      lax.update(window.scrollY);
+    };
 
+    document.addEventListener('scroll', handleScroll, false);
     lax.update(window.scrollY);
-  });
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <section className="speakers-area ptb-120 pb-0">
@@ -25,7 +34,9 @@ function Speakers() {
           <span>Listen to the Event Speakers</span>
           <h2>Who's Speaking</h2>
           <div className="bar"></div>
-          <LaxDiv text="Speakers" dataPreset="driftRight" />
+          <div className="bg-title lax" data-lax-preset="driftLeft">
+            Speakers
+          </div>
           <Link to="#" className="btn btn-primary">
             View More Speakers
           </Link>
@@ -36,7 +47,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers1.jpg")}
+              src={speakers1}
               alt="Speaker"
             />
 
@@ -74,7 +85,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers2.jpg")}
+              src={speakers2}
               alt="Speaker"
             />
 
@@ -112,7 +123,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers3.jpg")}
+              src={speakers3}
               alt="Speaker"
             />
 
@@ -150,7 +161,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers4.jpg")}
+              src={speakers4}
               alt="Speaker"
             />
 
@@ -188,7 +199,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers5.jpg")}
+              src={speakers5}
               alt="Speaker"
             />
 
@@ -226,7 +237,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers6.jpg")}
+              src={speakers6}
               alt="Speaker"
             />
 
@@ -264,7 +275,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers7.jpg")}
+              src={speakers7}
               alt="Speaker"
             />
 
@@ -302,7 +313,7 @@ function Speakers() {
         <div className="col-lg-3 col-sm-6 p-0">
           <div className="single-speakers">
             <img
-              src={require("../../assets/images/speakers8.jpg")}
+              src={speakers8}
               alt="Speaker"
             />
 

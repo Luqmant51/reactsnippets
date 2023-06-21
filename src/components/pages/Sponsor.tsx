@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import lax from "lax.js";
 import OwlCarousel from "react-owl-carousel3";
 import Footer from "../Common/Footer";
+import lax from 'lax.js';
+import Sponsors from "../LaxButton/Sponsors";
 
 const options = {
   loop: true,
@@ -31,17 +32,17 @@ function Sponsor() {
   useEffect(() => {
     lax.setup();
 
-    document.addEventListener(
-      "scroll",
-      function (x) {
-        lax.update(window.scrollY);
-      },
-      false
-    );
+    const handleScroll = () => {
+      lax.update(window.scrollY);
+    };
 
+    document.addEventListener('scroll', handleScroll, false);
     lax.update(window.scrollY);
-  }, []);
 
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <div className="page-title-area item-bg2">
@@ -61,7 +62,7 @@ function Sponsor() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="partner-title platinum-sponsor">hello</div>
+              <div className="partner-title platinum-sponsor"><Sponsors text="Platinum Sponsors" /></div>
             </div>
 
             <OwlCarousel
@@ -149,7 +150,7 @@ function Sponsor() {
             </div>
 
             <div className="col-lg-12">
-              <div className="partner-title gold-sponsor">helo</div>
+              <div className="partner-title gold-sponsor"><Sponsors text="Golden Sponsors" /></div>
             </div>
 
             <OwlCarousel

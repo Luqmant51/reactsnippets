@@ -3,13 +3,13 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
 function FunFact() {
-    const [didViewCountUp, setDidViewCountUp] = useState(false);
+  const [didViewCountUp, setDidViewCountUp] = useState(false);
 
-    const onVisibilityChange = (isVisible) => {
-        if (isVisible) {
-            setDidViewCountUp(true);
-        }
-    };
+  const onVisibilityChange = (isVisible: boolean) => {
+    if (isVisible) {
+      setDidViewCountUp(true);
+    }
+  };
 
   return (
     <section className="funfacts-area ptb-120">

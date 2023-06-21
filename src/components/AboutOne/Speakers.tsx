@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
-import lax from "lax.js";
 import { Link } from "react-router-dom";
-import LaxDiv from "../Shared/LaxDiv";
+import lax from 'lax.js';
 
 function Speakers() {
   useEffect(() => {
     lax.setup();
 
-    document.addEventListener(
-      "scroll",
-      function (x) {
-        lax.update(window.scrollY);
-      },
-      false
-    );
+    const handleScroll = () => {
+      lax.update(window.scrollY);
+    };
 
+    document.addEventListener('scroll', handleScroll, false);
     lax.update(window.scrollY);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -25,7 +25,9 @@ function Speakers() {
           <span>Listen to the Event Speakers</span>
           <h2>Who's Speaking</h2>
           <div className="bar"></div>
-          <LaxDiv text="Speakers" dataPreset="driftRight" />
+          <div className="bg-title lax" data-lax-preset="driftLeft">
+            Speakers
+          </div>
           <Link to="/speakers-1" className="btn btn-primary">
             View More Speakers
           </Link>
