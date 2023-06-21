@@ -1,16 +1,16 @@
 import React from "react";
-import MainBanner from "../schedule/MainBanner";
+import PagesMainBanner from "../Common/PagesMainBanner";
 import EventSchedulesOne from "../schedule/EventSchedulesOne";
 import Footer from "../Common/Footer";
 
-function ScheduleOne() {
+function Schedule() {
   return (
     <>
-      <MainBanner />
+      <PagesMainBanner title="Schedule" subTitle="Listen to the Event Speakers" path="schedule" />
       <EventSchedulesOne />
       <Footer />
     </>
   );
 }
 
-export default ScheduleOne;
+export default Schedule;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "isomorphic-fetch";
 import Footer from "../Common/Footer";
+import PagesMainBanner from "../Common/PagesMainBanner";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -73,19 +74,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="page-title-area item-bg1">
-        <div className="container">
-          <h1>Contact Us</h1>
-          <span>Send me your Message</span>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>Contact</li>
-          </ul>
-        </div>
-      </div>
-
+    <PagesMainBanner title="Contact Us" subTitle="Send me your Message" path="Contact" />
       <section className="contact-area ptb-120">
         <div className="container">
           <div className="row">

@@ -1,12 +1,12 @@
 import React from "react";
-import MainBanner from "../Pricing/MainBanner";
+import PagesMainBanner from "../Common/PagesMainBanner";
 import PricingCardOne from "../Pricing/PricingCardOne";
 import Footer from "../Common/Footer";
 
 function PricingOne() {
   return (
     <>
-      <MainBanner />
+      <PagesMainBanner title="Pricing" subTitle="Get Your Tickets" path="Pricing" />
       <PricingCardOne />
       <Footer />
     </>

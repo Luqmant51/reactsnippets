@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionItem,
@@ -9,6 +8,7 @@ import {
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
 import Footer from "../Common/Footer";
+import PagesMainBanner from "../Common/PagesMainBanner";
 
 function Faq() {
   const submitHandler = (e: { preventDefault: () => void; }) => {
@@ -17,19 +17,7 @@ function Faq() {
 
   return (
     <>
-      <div className="page-title-area item-bg2">
-        <div className="container">
-          <h1>FAQ</h1>
-          <span>Frequently asked Questions</span>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>FAQ</li>
-          </ul>
-        </div>
-      </div>
-
+    <PagesMainBanner title="FAQ" subTitle="Frequently asked Questions" path="FAQ" />
       <section className="faq-area ptb-120">
         <div className="container">
           <div className="faq-accordion">
